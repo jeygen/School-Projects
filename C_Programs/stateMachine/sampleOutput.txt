@@ -1,0 +1,225 @@
+***
+Welcome to state machine
+***
+Input options (case sensitive):
+---To change what the current state's zero state or one state value is: c <0 or 1> <A-H>
+---To change current state to it's one or zero state: <0 or 1>
+---To identify unreachable states: g
+---To delete garbage or specified states: d or d <A-H>
+---To quit: q
+---To replay this message: r
+***
+The current state is: A
+***
+
+***
+Please input args.
+p
+----
+STATE: A
+NextZeroState: H
+NextOneState: G
+----
+STATE: B
+NextZeroState: E
+NextOneState: H
+----
+STATE: C
+NextZeroState: F
+NextOneState: D
+----
+STATE: D
+NextZeroState: B
+NextOneState: E
+----
+STATE: E
+NextZeroState: G
+NextOneState: F
+----
+STATE: F
+NextZeroState: D
+NextOneState: A
+----
+STATE: G
+NextZeroState: A
+NextOneState: B
+----
+STATE: H
+NextZeroState: H
+NextOneState: C
+
+***
+Please input args.
+g
+----
+STATE: A
+NextZeroState: H
+NextOneState: G
+----
+STATE: B
+NextZeroState: E
+NextOneState: H
+----
+STATE: C
+NextZeroState: F
+NextOneState: D
+----
+STATE: D
+NextZeroState: B
+NextOneState: E
+----
+STATE: E
+NextZeroState: G
+NextOneState: F
+----
+STATE: F
+NextZeroState: D
+NextOneState: A
+----
+STATE: G
+NextZeroState: A
+NextOneState: B
+----
+STATE: H
+NextZeroState: H
+NextOneState: C
+
+Reachable states from (A)'s perspective: A  G  B  H  C  D  E  F 
+Garbage: No garbage
+
+***
+Please input args.
+c 0 G
+Zero state successfully changed.
+***
+Please input args.
+1
+The next state of "A" is "G"
+New current state is "G"
+
+***
+Please input args.
+g
+----
+STATE: A
+NextZeroState: G
+NextOneState: G
+----
+STATE: B
+NextZeroState: E
+NextOneState: H
+----
+STATE: C
+NextZeroState: F
+NextOneState: D
+----
+STATE: D
+NextZeroState: B
+NextOneState: E
+----
+STATE: E
+NextZeroState: G
+NextOneState: F
+----
+STATE: F
+NextZeroState: D
+NextOneState: A
+----
+STATE: G
+NextZeroState: A
+NextOneState: B
+----
+STATE: H
+NextZeroState: H
+NextOneState: C
+
+Reachable states from (G)'s perspective: G  B  H  C  D  E  F  A 
+Garbage: No garbage
+
+***
+Please input args.
+c 1 A
+One state successfully changed.
+***
+Please input args.
+g
+----
+STATE: A
+NextZeroState: G
+NextOneState: G
+----
+STATE: B
+NextZeroState: E
+NextOneState: H
+----
+STATE: C
+NextZeroState: F
+NextOneState: D
+----
+STATE: D
+NextZeroState: B
+NextOneState: E
+----
+STATE: E
+NextZeroState: G
+NextOneState: F
+----
+STATE: F
+NextZeroState: D
+NextOneState: A
+----
+STATE: G
+NextZeroState: A
+NextOneState: A
+----
+STATE: H
+NextZeroState: H
+NextOneState: C
+
+Reachable states from (G)'s perspective: G  A 
+Garbage: B  C  D  E  F  H 
+***
+Please input args.
+d
+Input 0 to delete all garbage, otherwise input <A-H> to check status of specific state:
+0
+Current list of deleted states:  B  C  D  E  F  H 
+
+***
+Please input args.
+g
+----
+STATE: A
+NextZeroState: G
+NextOneState: G
+----
+STATE: G
+NextZeroState: A
+NextOneState: A
+
+Reachable states from (G)'s perspective: G  A 
+Garbage: No garbage
+
+***
+Please input args.
+d
+Input 0 to delete all garbage, otherwise input <A-H> to check status of specific state:
+A
+
+No states deleted.
+Current list of deleted states:  B  C  D  E  F  H 
+A is not deleted
+
+***
+Please input args.
+d
+Input 0 to delete all garbage, otherwise input <A-H> to check status of specific state:
+B
+
+No states deleted.
+Current list of deleted states:  B  C  D  E  F  H 
+B is deleted
+
+***
+Please input args.
+q

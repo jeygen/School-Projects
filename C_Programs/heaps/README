@@ -1,0 +1,11 @@
+When running ./heap the file input.txt can be used for the input values. ie "./heap < input.txt"
+
+The program will also accept manual integer values. It will crash if non-integers are input.
+
+The output will be the input values, an array in heap form, xml nodes presented in a preorder traversal, sorted
+descending values via deleting from the heap, and then finally ascending values from a stack.
+
+Resources used and research materials included lecture notes, https://www.geeksforgeeks.org/heap-data-structure/, 
+https://www.edureka.co/blog, https://www.tutorialspoint.com/c_standard_library/c_function_isdigit.htm, and
+https://www.youtube.com/watch?v=HqPJF2L5h9U.
+
